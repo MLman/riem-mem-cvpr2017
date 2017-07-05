@@ -1,0 +1,1 @@
+Image files will be stored here.

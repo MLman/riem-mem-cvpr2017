@@ -1,0 +1,182 @@
+
+<!DOCTYPE html
+  PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<html><head>
+      <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+   <!--
+This HTML was auto-generated from MATLAB code.
+To make changes, update the MATLAB code and republish this document.
+      --><title>DEMO for "Riemannian Nonlinear Mixed Effects Models: Analyzing LongitudinalDeformations in Neuroimaging"</title><meta name="generator" content="MATLAB 9.0"><link rel="schema.DC" href="http://purl.org/dc/elements/1.1/"><meta name="DC.date" content="2017-07-04"><meta name="DC.source" content="DEMO.m"><style type="text/css">
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,font,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td{margin:0;padding:0;border:0;outline:0;font-size:100%;vertical-align:baseline;background:transparent}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}:focus{outine:0}ins{text-decoration:none}del{text-decoration:line-through}table{border-collapse:collapse;border-spacing:0}
+
+html { min-height:100%; margin-bottom:1px; }
+html body { height:100%; margin:0px; font-family:Arial, Helvetica, sans-serif; font-size:10px; color:#000; line-height:140%; background:#fff none; overflow-y:scroll; }
+html body td { vertical-align:top; text-align:left; }
+
+h1 { padding:0px; margin:0px 0px 25px; font-family:Arial, Helvetica, sans-serif; font-size:1.5em; color:#d55000; line-height:100%; font-weight:normal; }
+h2 { padding:0px; margin:0px 0px 8px; font-family:Arial, Helvetica, sans-serif; font-size:1.2em; color:#000; font-weight:bold; line-height:140%; border-bottom:1px solid #d6d4d4; display:block; }
+h3 { padding:0px; margin:0px 0px 5px; font-family:Arial, Helvetica, sans-serif; font-size:1.1em; color:#000; font-weight:bold; line-height:140%; }
+
+a { color:#005fce; text-decoration:none; }
+a:hover { color:#005fce; text-decoration:underline; }
+a:visited { color:#004aa0; text-decoration:none; }
+
+p { padding:0px; margin:0px 0px 20px; }
+img { padding:0px; margin:0px 0px 20px; border:none; }
+p img, pre img, tt img, li img, h1 img, h2 img { margin-bottom:0px; } 
+
+ul { padding:0px; margin:0px 0px 20px 23px; list-style:square; }
+ul li { padding:0px; margin:0px 0px 7px 0px; }
+ul li ul { padding:5px 0px 0px; margin:0px 0px 7px 23px; }
+ul li ol li { list-style:decimal; }
+ol { padding:0px; margin:0px 0px 20px 0px; list-style:decimal; }
+ol li { padding:0px; margin:0px 0px 7px 23px; list-style-type:decimal; }
+ol li ol { padding:5px 0px 0px; margin:0px 0px 7px 0px; }
+ol li ol li { list-style-type:lower-alpha; }
+ol li ul { padding-top:7px; }
+ol li ul li { list-style:square; }
+
+.content { font-size:1.2em; line-height:140%; padding: 20px; }
+
+pre, code { font-size:12px; }
+tt { font-size: 1.2em; }
+pre { margin:0px 0px 20px; }
+pre.codeinput { padding:10px; border:1px solid #d3d3d3; background:#f7f7f7; }
+pre.codeoutput { padding:10px 11px; margin:0px 0px 20px; color:#4c4c4c; }
+pre.error { color:red; }
+
+@media print { pre.codeinput, pre.codeoutput { word-wrap:break-word; width:100%; } }
+
+span.keyword { color:#0000FF }
+span.comment { color:#228B22 }
+span.string { color:#A020F0 }
+span.untermstring { color:#B20000 }
+span.syscmd { color:#B28C00 }
+
+.footer { width:auto; padding:10px 0px; margin:25px 0px 0px; border-top:1px dotted #878787; font-size:0.8em; line-height:140%; font-style:italic; color:#878787; text-align:left; float:none; }
+.footer p { margin:0px; }
+.footer a { color:#878787; }
+.footer a:hover { color:#878787; text-decoration:underline; }
+.footer a:visited { color:#878787; }
+
+table th { padding:7px 5px; text-align:left; vertical-align:middle; border: 1px solid #d6d4d4; font-weight:bold; }
+table td { padding:7px 5px; text-align:left; vertical-align:top; border:1px solid #d6d4d4; }
+
+
+
+
+
+  </style></head><body><div class="content"><h1>DEMO for "Riemannian Nonlinear Mixed Effects Models: Analyzing LongitudinalDeformations in Neuroimaging"</h1><!--introduction--><p>Hyunwoo J. Kim, Nagesh Adluru, Heemanshu Suri, Baba C. Vemuri, Sterling C. Johnson, Vikas Singh, Riemannian Nonlinear Mixed Effects Models: Analyzing LongitudinalDeformations in Neuroimaging, In Computer Vision and Pattern Recognition (CVPR), July, 2017</p><p>Project page: <a href="http://pages.cs.wisc.edu/~hwkim/projects/riem-mem/">http://pages.cs.wisc.edu/~hwkim/projects/riem-mem/</a></p><p>Github repository: <a href="http://github.com/MLman/riem-mem-cvpr2017/">http://github.com/MLman/riem-mem-cvpr2017/</a></p><p>Github page: <a href="http://mlman.github.io/riem-mem-cvpr2017/">http://mlman.github.io/riem-mem-cvpr2017/</a></p><!--/introduction--><h2>Contents</h2><div><ul><li><a href="#1">Algorithm 1 : subject-specfic intercepts</a></li><li><a href="#2">Algorithm 2 : subject-specfic slopes and intercepts</a></li></ul></div><h2>Algorithm 1 : subject-specfic intercepts<a name="1"></a></h2><p>Comparison between a MMGLM and Riemannian Mixed Effects model with subject-specific intercetps.</p><pre class="codeinput">addpath(genpath(<span class="string">'.'</span>));
+clear
+close
+<span class="comment">%synth_exp3</span>
+load <span class="string">./synthdata/synth_exp3_20161029_124937.mat</span>
+
+option=struct(<span class="string">'centerX'</span>,true);
+[Yhat, Bhat, P] = mmem(X,Y,Z,option);
+X0 = [ones(size(X,1),1), X]';
+[P0, Bhat0, E0, Yhat0] = mglm_logeuc_spd(X',Y);
+
+<span class="comment">% Visualization of Yhat</span>
+mytitle=<span class="string">'Synthetic Experiments (Alg. 1)'</span>;
+fname = sprintf(<span class="string">'./figs/%s_%s_%s.png'</span>,mfilename, mytitle, datestr(now,<span class="string">'yyyymmdd_HHMMSS'</span>));
+synth_plot_wrapper(X,Z,Y,uV,Pstar,P,Bhat,Yhat,P0,Bhat0,Yhat0,fname,mytitle);
+</pre><img vspace="5" hspace="5" src="DEMO_01.png" alt=""> <h2>Algorithm 2 : subject-specfic slopes and intercepts<a name="2"></a></h2><p>Comparison between a MMGLM and Riemannian Mixed Effects model with subject-specific accelerations and intercetps.</p><pre class="codeinput">clear
+close
+<span class="comment">%synth_exp4_for_DEMO_mmem2</span>
+load <span class="string">./synthdata/synth_exp4_for_DEMO_mmem2_20170704_153512.mat</span>
+option=struct(<span class="string">'centerX'</span>,true);
+option.niter= 100;
+
+stacks = size(Y,3);
+Ydims = size(Y,1);
+
+[Yhat, model] = mmem2(X, Y, Z, option);
+U = main_change_direction(X,Y,Z, option);
+UatB = paralleltranslateAtoB_spd(eye(Ydims),model.B, U);
+
+[Yhat1, Bhat1, P1] = mmem(X,Y,Z,option);
+
+X0 = [ones(size(X,1),1), X]';
+[P0, Bhat0, E0, Yhat0] = mglm_logeuc_spd(X',Y);
+
+<span class="comment">% Visualization Alg. 1</span>
+mytitle=<span class="string">'Synthetic Experiments (Alg. 1)'</span>;
+fname = sprintf(<span class="string">'./figs/%s_%s_%s.png'</span>,mfilename, mytitle, datestr(now,<span class="string">'yyyymmdd_HHMMSS'</span>));
+synth_plot_wrapper(X,Z,Y,uV,Pstar,P1,Bhat1,Yhat1,P0,Bhat0,Yhat0,fname,mytitle);
+
+<span class="comment">% Visualization of Alg. 2</span>
+mytitle=<span class="string">'Synthetic Experiments (Alg. 2)'</span>;
+fname = sprintf(<span class="string">'./figs/%s_%s_%s.png'</span>,mfilename, mytitle, datestr(now,<span class="string">'yyyymmdd_HHMMSS'</span>));
+synth_plot_wrapper(X,Z,Y,uV,Pstar,model.B,model.V,Yhat,P0,Bhat0,Yhat0,fname,mytitle);
+</pre><img vspace="5" hspace="5" src="DEMO_02.png" alt=""> <img vspace="5" hspace="5" src="DEMO_03.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+##### SOURCE BEGIN #####
+%% DEMO for "Riemannian Nonlinear Mixed Effects Models: Analyzing LongitudinalDeformations in Neuroimaging"
+% Hyunwoo J. Kim, Nagesh Adluru, Heemanshu Suri, Baba C. Vemuri, Sterling
+% C. Johnson, Vikas Singh, 
+% Riemannian Nonlinear Mixed Effects Models: Analyzing
+% LongitudinalDeformations in Neuroimaging,
+% In Computer Vision and Pattern Recognition (CVPR), July, 2017
+%
+% Project page:
+% http://pages.cs.wisc.edu/~hwkim/projects/riem-mem/
+%
+% Github repository:
+% http://github.com/MLman/riem-mem-cvpr2017/
+%
+% Github page:
+% http://mlman.github.io/riem-mem-cvpr2017/
+
+%% Algorithm 1 : subject-specfic intercepts
+% Comparison between a MMGLM and Riemannian Mixed Effects model with
+% subject-specific intercetps.
+
+addpath(genpath('.'));
+clear 
+close
+%synth_exp3 
+load ./synthdata/synth_exp3_20161029_124937.mat
+
+option=struct('centerX',true);
+[Yhat, Bhat, P] = mmem(X,Y,Z,option);
+X0 = [ones(size(X,1),1), X]';
+[P0, Bhat0, E0, Yhat0] = mglm_logeuc_spd(X',Y);
+
+% Visualization of Yhat
+mytitle='Synthetic Experiments (Alg. 1)';
+fname = sprintf('./figs/%s_%s_%s.png',mfilename, mytitle, datestr(now,'yyyymmdd_HHMMSS'));
+synth_plot_wrapper(X,Z,Y,uV,Pstar,P,Bhat,Yhat,P0,Bhat0,Yhat0,fname,mytitle);
+
+%% Algorithm 2 : subject-specfic slopes and intercepts
+% Comparison between a MMGLM and Riemannian Mixed Effects model with
+% subject-specific accelerations and intercetps.
+clear 
+close
+%synth_exp4_for_DEMO_mmem2 
+load ./synthdata/synth_exp4_for_DEMO_mmem2_20170704_153512.mat
+option=struct('centerX',true);
+option.niter= 100;
+
+stacks = size(Y,3);
+Ydims = size(Y,1);
+
+[Yhat, model] = mmem2(X, Y, Z, option);
+U = main_change_direction(X,Y,Z, option);
+UatB = paralleltranslateAtoB_spd(eye(Ydims),model.B, U);
+
+[Yhat1, Bhat1, P1] = mmem(X,Y,Z,option);
+
+X0 = [ones(size(X,1),1), X]';
+[P0, Bhat0, E0, Yhat0] = mglm_logeuc_spd(X',Y);
+
+% Visualization Alg. 1
+mytitle='Synthetic Experiments (Alg. 1)';
+fname = sprintf('./figs/%s_%s_%s.png',mfilename, mytitle, datestr(now,'yyyymmdd_HHMMSS'));
+synth_plot_wrapper(X,Z,Y,uV,Pstar,P1,Bhat1,Yhat1,P0,Bhat0,Yhat0,fname,mytitle);
+
+% Visualization of Alg. 2
+mytitle='Synthetic Experiments (Alg. 2)';
+fname = sprintf('./figs/%s_%s_%s.png',mfilename, mytitle, datestr(now,'yyyymmdd_HHMMSS'));
+synth_plot_wrapper(X,Z,Y,uV,Pstar,model.B,model.V,Yhat,P0,Bhat0,Yhat0,fname,mytitle);
+##### SOURCE END #####
+--></body></html>
