@@ -81,7 +81,7 @@ X0 = [ones(size(X,1),1), X]';
 mytitle=<span class="string">'Synthetic Experiments (Alg. 1)'</span>;
 fname = sprintf(<span class="string">'./figs/%s_%s_%s.png'</span>,mfilename, mytitle, datestr(now,<span class="string">'yyyymmdd_HHMMSS'</span>));
 synth_plot_wrapper(X,Z,Y,uV,Pstar,P,Bhat,Yhat,P0,Bhat0,Yhat0,fname,mytitle);
-</pre><img vspace="5" hspace="5" src="DEMO_01.png" alt=""> <h2>Algorithm 2 : subject-specfic slopes and intercepts<a name="2"></a></h2><p>Comparison between a MMGLM and Riemannian Mixed Effects model with subject-specific accelerations and intercetps.</p><pre class="codeinput">clear
+</pre><img vspace="5" hspace="5" src="DEMO_01.png" alt="" width="90%"> <h2>Algorithm 2 : subject-specfic slopes and intercepts<a name="2"></a></h2><p>Comparison between a MMGLM and Riemannian Mixed Effects model with subject-specific accelerations and intercetps.</p><pre class="codeinput">clear
 close
 <span class="comment">%synth_exp4_for_DEMO_mmem2</span>
 load <span class="string">./synthdata/synth_exp4_for_DEMO_mmem2_20170704_153512.mat</span>
@@ -109,7 +109,8 @@ synth_plot_wrapper(X,Z,Y,uV,Pstar,P1,Bhat1,Yhat1,P0,Bhat0,Yhat0,fname,mytitle);
 mytitle=<span class="string">'Synthetic Experiments (Alg. 2)'</span>;
 fname = sprintf(<span class="string">'./figs/%s_%s_%s.png'</span>,mfilename, mytitle, datestr(now,<span class="string">'yyyymmdd_HHMMSS'</span>));
 synth_plot_wrapper(X,Z,Y,uV,Pstar,model.B,model.V,Yhat,P0,Bhat0,Yhat0,fname,mytitle);
-</pre><img vspace="5" hspace="5" src="DEMO_02.png" alt=""> <img vspace="5" hspace="5" src="DEMO_03.png" alt=""> <p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
+</pre><img vspace="5" hspace="5" src="DEMO_02.png" alt="" width="90%"> <img vspace="5" hspace="5" src="DEMO_03.png" alt="" width="90%"> 
+<p class="footer"><br><a href="http://www.mathworks.com/products/matlab/">Published with MATLAB&reg; R2016a</a><br></p></div><!--
 ##### SOURCE BEGIN #####
 %% DEMO for "Riemannian Nonlinear Mixed Effects Models: Analyzing LongitudinalDeformations in Neuroimaging"
 % Hyunwoo J. Kim, Nagesh Adluru, Heemanshu Suri, Baba C. Vemuri, Sterling
