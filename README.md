@@ -5,7 +5,7 @@ Hyunwoo J. Kim, Nagesh Adluru, Heemanshu Suri, Baba C. Vemuri, Sterling C. Johns
 This is the minimal source code written in MATLAB for Riemannian mixed effects models on SPD manifolds.
 
 Please take a look at Demo html
-[[Demo Doc]](http://pages.cs.wisc.edu/~hwkim/projects/riem-mem-cvpr2017/codedoc/html/DEMO.html),
+[[Demo Doc]](http://pages.cs.wisc.edu/~hwkim/projects/riem-mem/codedoc/html/DEMO.html),
 [[On github page]](http://mlman.github.io/riem-mem-cvpr2017/).
 
 Also, the demo script "DEMO.m" is available in the root directory.
